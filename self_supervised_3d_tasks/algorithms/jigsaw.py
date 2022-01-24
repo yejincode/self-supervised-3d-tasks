@@ -1,5 +1,9 @@
 from tensorflow.keras import Input, Model
-from tensorflow.keras.layers import TimeDistributed, Flatten, Dense
+
+# Dense레이어는 fully-connected layer 
+# TimeDistributed() 함수의 의미는 각 스텝마다 cost (오류)를 계산해서 하위 스텝으로 오류를 전파하여 각 weight를 업데이트하라는 의미
+# flatten은 평탄화 시키는 layer
+from tensorflow.keras.layers import TimeDistributed, Flatten, Dense 
 from tensorflow.keras.optimizers import Adam
 
 from self_supervised_3d_tasks.algorithms.algorithm_base import AlgorithmBuilderBase
