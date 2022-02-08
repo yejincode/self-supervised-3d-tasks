@@ -7,7 +7,7 @@ from self_supervised_3d_tasks.preprocessing.utils.pad import pad_to_final_size_3
 
 
 def preprocess_image(image, is_training, patches_per_side, patch_jitter, permutations, mode3d):
-    label = random.randint(0, len(permutations) - 1)
+    label = random.randint(0, len(permutations) - 1) #0에서 permutation 길이의 범위 내의 랜덤한 정수 int 반환
 
     if mode3d:
         patches = crop_patches_3d(image, is_training, patches_per_side, patch_jitter)
