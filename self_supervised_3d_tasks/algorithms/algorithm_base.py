@@ -22,8 +22,8 @@ class AlgorithmBuilderBase:
         self.layer_data = None
         self.enc_model = None
 
-    def apply_model(self):
-        pass
+    def apply_model(self): #self는 객체 자기 자신 의미. 에러 안나려면 파라미터에 self를 첫번쨰로 넣어야 함. 
+        pass #추상 클래스에서 추상 메서드(함수)를 만들 때 사용-> 직소퍼즐 알고리즘 부분에서 세부 함수 내용 나옴. 
 
     def apply_prediction_model_to_encoder(self, encoder_model):
         pass
@@ -42,7 +42,7 @@ class AlgorithmBuilderBase:
 
     def get_finetuning_model(self, model_checkpoint=None):
         model = self.apply_model()
-        assert self.enc_model is not None, "no encoder model"
+        assert self.enc_model is not None, "no encoder model" #enc_model이 none이라면 no encoder model출력 -> 에러 방지
 
         if model_checkpoint is not None:
             try:
